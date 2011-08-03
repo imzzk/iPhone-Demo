@@ -88,8 +88,21 @@ NSMutableArray *listOfMovies;
     NSString *cellValue = [listOfMovies objectAtIndex:indexPath.row];
     cell.textLabel.text = cellValue;
     
+    UIImage *image = [UIImage imageNamed:@"rss.png"];
+    cell.imageView.image = image;
     
     return  cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSString *movieSelected = [listOfMovies objectAtIndex:indexPath.row];
+    
+    NSString *msg = [[NSString alloc] initWithFormat:@"You have selected ,%@",movieSelected];
+    
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Moive Selected" message:msg delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    [alertView show];
+    [alertView release];
+
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
@@ -100,6 +113,10 @@ NSMutableArray *listOfMovies;
 -(NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section{
 
     return @"Product by imzzk";
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return  60.0;
 }
 
 
