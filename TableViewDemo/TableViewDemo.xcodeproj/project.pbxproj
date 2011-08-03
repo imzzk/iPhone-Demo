@@ -16,6 +16,7 @@
 		C1FC4F9E13E946E6002D235B /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1FC4F9C13E946E6002D235B /* MainWindow.xib */; };
 		C1FC4FA113E946E6002D235B /* TableViewDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FC4FA013E946E6002D235B /* TableViewDemoViewController.m */; };
 		C1FC4FA413E946E6002D235B /* TableViewDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1FC4FA213E946E6002D235B /* TableViewDemoViewController.xib */; };
+		C1FC4FAC13E94EB2002D235B /* rss.png in Resources */ = {isa = PBXBuildFile; fileRef = C1FC4FAB13E94EB2002D235B /* rss.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		C1FC4F9F13E946E6002D235B /* TableViewDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewDemoViewController.h; sourceTree = "<group>"; };
 		C1FC4FA013E946E6002D235B /* TableViewDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewDemoViewController.m; sourceTree = "<group>"; };
 		C1FC4FA313E946E6002D235B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TableViewDemoViewController.xib; sourceTree = "<group>"; };
+		C1FC4FAB13E94EB2002D235B /* rss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rss.png; path = TableViewDemo/rss.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 		C1FC4F7B13E946E6002D235B = {
 			isa = PBXGroup;
 			children = (
+				C1FC4FAA13E94E7D002D235B /* Resources */,
 				C1FC4F9013E946E6002D235B /* TableViewDemo */,
 				C1FC4F8913E946E6002D235B /* Frameworks */,
 				C1FC4F8713E946E6002D235B /* Products */,
@@ -81,10 +84,8 @@
 			children = (
 				C1FC4F9913E946E6002D235B /* TableViewDemoAppDelegate.h */,
 				C1FC4F9A13E946E6002D235B /* TableViewDemoAppDelegate.m */,
-				C1FC4F9C13E946E6002D235B /* MainWindow.xib */,
 				C1FC4F9F13E946E6002D235B /* TableViewDemoViewController.h */,
 				C1FC4FA013E946E6002D235B /* TableViewDemoViewController.m */,
-				C1FC4FA213E946E6002D235B /* TableViewDemoViewController.xib */,
 				C1FC4F9113E946E6002D235B /* Supporting Files */,
 			);
 			path = TableViewDemo;
@@ -99,6 +100,16 @@
 				C1FC4F9813E946E6002D235B /* TableViewDemo-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C1FC4FAA13E94E7D002D235B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C1FC4FAB13E94EB2002D235B /* rss.png */,
+				C1FC4FA213E946E6002D235B /* TableViewDemoViewController.xib */,
+				C1FC4F9C13E946E6002D235B /* MainWindow.xib */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +165,7 @@
 				C1FC4F9513E946E6002D235B /* InfoPlist.strings in Resources */,
 				C1FC4F9E13E946E6002D235B /* MainWindow.xib in Resources */,
 				C1FC4FA413E946E6002D235B /* TableViewDemoViewController.xib in Resources */,
+				C1FC4FAC13E94EB2002D235B /* rss.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +199,7 @@
 				C1FC4F9D13E946E6002D235B /* en */,
 			);
 			name = MainWindow.xib;
+			path = TableViewDemo;
 			sourceTree = "<group>";
 		};
 		C1FC4FA213E946E6002D235B /* TableViewDemoViewController.xib */ = {
@@ -195,6 +208,7 @@
 				C1FC4FA313E946E6002D235B /* en */,
 			);
 			name = TableViewDemoViewController.xib;
+			path = TableViewDemo;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
