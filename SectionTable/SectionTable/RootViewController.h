@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MovieDetailViewController.h"
 
 @interface RootViewController : UITableViewController <UISearchBarDelegate>
 {
+    MovieDetailViewController *detailViewController;
     NSDictionary *movieTitles;
     NSArray *years;
     
@@ -27,7 +29,9 @@
 
 @property(nonatomic, retain)NSArray *years;
 
-@property(nonatomic, retain)UISearchBar *searchBar;
+@property(nonatomic, retain)UISearchBar *searchBar; 
+
+@property(nonatomic, retain)MovieDetailViewController *detailViewController;
 
 -(void) doneSearch:(id)sender;
 -(void) searchMoviesTableView;

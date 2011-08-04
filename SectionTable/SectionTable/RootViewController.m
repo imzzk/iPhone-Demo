@@ -10,10 +10,12 @@
 
 @implementation RootViewController
 
-@synthesize moiveTitles,years,searchBar;
+@synthesize moiveTitles,years,searchBar,detailViewController;
 
 - (void)viewDidLoad
 {
+    self.title = @"List Of Movies";
+    
     NSString *path = [[NSBundle mainBundle] pathForResource:@"Movies" ofType:@"plist"];
     
     NSDictionary *dic = [[NSDictionary alloc] initWithContentsOfFile:path];
@@ -198,13 +200,21 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    /*
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+    NSString *year = [self.years objectAtIndex:[indexPath section]];
+    NSArray *movieSection = [self.moiveTitles objectForKey:year];
+    NSString *movieTitle = [movieSection objectAtIndex:indexPath.row];
+    NSString *message = [[NSString alloc] initWithFormat:@"You have selected %@",movieTitle];
+    
+    if (self.detailViewController == nil) {
+        MovieDetailViewController *detail = [[MovieDetailViewController alloc] initWithNibName:@"MovieDetailViewController" bundle:[NSBundle mainBundle]];
+        self.detailViewController = detail;
+        [detail release];
+    }
     // ...
     // Pass the selected object to the new view controller.
+    self.detailViewController.selectedMovie = message;
     [self.navigationController pushViewController:detailViewController animated:YES];
-    [detailViewController release];
-	*/
+    	
 }
 
 - (void)didReceiveMemoryWarning
@@ -225,6 +235,7 @@
 
 - (void)dealloc
 {
+    [detailViewController release];
     [searchResult release];
     [listOfMovies release];
     [searchBar release];
