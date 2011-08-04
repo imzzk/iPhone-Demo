@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C11E5EC713EA7DF300EDC474 /* MovieDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C11E5EC513EA7DF300EDC474 /* MovieDetailViewController.m */; };
+		C11E5EC813EA7DF300EDC474 /* MovieDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C11E5EC613EA7DF300EDC474 /* MovieDetailViewController.xib */; };
 		C1336FAE13E989D0004C66BE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1336FAD13E989D0004C66BE /* UIKit.framework */; };
 		C1336FB013E989D0004C66BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1336FAF13E989D0004C66BE /* Foundation.framework */; };
 		C1336FB213E989D0004C66BE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1336FB113E989D0004C66BE /* CoreGraphics.framework */; };
@@ -16,9 +18,13 @@
 		C1336FC113E989D0004C66BE /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1336FBF13E989D0004C66BE /* MainWindow.xib */; };
 		C1336FC413E989D0004C66BE /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1336FC313E989D0004C66BE /* RootViewController.m */; };
 		C1336FC713E989D0004C66BE /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1336FC513E989D0004C66BE /* RootViewController.xib */; };
+		C1336FD113E98F30004C66BE /* Movies.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1336FD013E98F30004C66BE /* Movies.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C11E5EC413EA7DF300EDC474 /* MovieDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieDetailViewController.h; sourceTree = "<group>"; };
+		C11E5EC513EA7DF300EDC474 /* MovieDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieDetailViewController.m; sourceTree = "<group>"; };
+		C11E5EC613EA7DF300EDC474 /* MovieDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MovieDetailViewController.xib; path = SectionTable/MovieDetailViewController.xib; sourceTree = "<group>"; };
 		C1336FA913E989D0004C66BE /* SectionTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SectionTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1336FAD13E989D0004C66BE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C1336FAF13E989D0004C66BE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -33,6 +39,7 @@
 		C1336FC213E989D0004C66BE /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		C1336FC313E989D0004C66BE /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		C1336FC613E989D0004C66BE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
+		C1336FD013E98F30004C66BE /* Movies.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Movies.plist; path = SectionTable/Movies.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +59,7 @@
 		C1336F9E13E989D0004C66BE = {
 			isa = PBXGroup;
 			children = (
+				C1336FCD13E98A91004C66BE /* Resources */,
 				C1336FB313E989D0004C66BE /* SectionTable */,
 				C1336FAC13E989D0004C66BE /* Frameworks */,
 				C1336FAA13E989D0004C66BE /* Products */,
@@ -81,10 +89,10 @@
 			children = (
 				C1336FBC13E989D0004C66BE /* SectionTableAppDelegate.h */,
 				C1336FBD13E989D0004C66BE /* SectionTableAppDelegate.m */,
-				C1336FBF13E989D0004C66BE /* MainWindow.xib */,
 				C1336FC213E989D0004C66BE /* RootViewController.h */,
 				C1336FC313E989D0004C66BE /* RootViewController.m */,
-				C1336FC513E989D0004C66BE /* RootViewController.xib */,
+				C11E5EC413EA7DF300EDC474 /* MovieDetailViewController.h */,
+				C11E5EC513EA7DF300EDC474 /* MovieDetailViewController.m */,
 				C1336FB413E989D0004C66BE /* Supporting Files */,
 			);
 			path = SectionTable;
@@ -99,6 +107,17 @@
 				C1336FBB13E989D0004C66BE /* SectionTable-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C1336FCD13E98A91004C66BE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C11E5EC613EA7DF300EDC474 /* MovieDetailViewController.xib */,
+				C1336FD013E98F30004C66BE /* Movies.plist */,
+				C1336FC513E989D0004C66BE /* RootViewController.xib */,
+				C1336FBF13E989D0004C66BE /* MainWindow.xib */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +173,8 @@
 				C1336FB813E989D0004C66BE /* InfoPlist.strings in Resources */,
 				C1336FC113E989D0004C66BE /* MainWindow.xib in Resources */,
 				C1336FC713E989D0004C66BE /* RootViewController.xib in Resources */,
+				C1336FD113E98F30004C66BE /* Movies.plist in Resources */,
+				C11E5EC813EA7DF300EDC474 /* MovieDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +188,7 @@
 				C1336FBA13E989D0004C66BE /* main.m in Sources */,
 				C1336FBE13E989D0004C66BE /* SectionTableAppDelegate.m in Sources */,
 				C1336FC413E989D0004C66BE /* RootViewController.m in Sources */,
+				C11E5EC713EA7DF300EDC474 /* MovieDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +209,7 @@
 				C1336FC013E989D0004C66BE /* en */,
 			);
 			name = MainWindow.xib;
+			path = SectionTable;
 			sourceTree = "<group>";
 		};
 		C1336FC513E989D0004C66BE /* RootViewController.xib */ = {
@@ -195,6 +218,7 @@
 				C1336FC613E989D0004C66BE /* en */,
 			);
 			name = RootViewController.xib;
+			path = SectionTable;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -284,6 +308,7 @@
 				C1336FCC13E989D0004C66BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
