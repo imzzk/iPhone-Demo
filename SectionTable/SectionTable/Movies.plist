@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>2000</key>
+	<array>
+		<string>Malcolm X</string>
+		<string>The Pelican Brief</string>
+		<string>The Hurricane</string>
+	</array>
+	<key>2001</key>
+	<array>
+		<string>Remember the Titans</string>
+		<string>The Bone Collector</string>
+	</array>
+	<key>2002</key>
+	<array>
+		<string>John Q.</string>
+	</array>
+	<key>2004</key>
+	<array>
+		<string>Man on Fire</string>
+		<string>Out of Time</string>
+		<string>Training Day</string>
+		<string>License to Kill</string>
+		<string>Carbon Copy</string>
+	</array>
+	<key>2006</key>
+	<array>
+		<string>A Hand to Guide Me</string>
+		<string>Inside Man</string>
+	</array>
+	<key>2007</key>
+	<array>
+		<string>Deja Vu </string>
+	</array>
+	<key>2008</key>
+	<array>
+		<string>The Great Debaters</string>
+		<string>American Gangster</string>
+	</array>
+</dict>
+</plist>

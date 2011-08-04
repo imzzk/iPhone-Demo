@@ -8,6 +8,28 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RootViewController : UITableViewController
+@interface RootViewController : UITableViewController <UISearchBarDelegate>
+{
+    NSDictionary *movieTitles;
+    NSArray *years;
+    
+    IBOutlet UISearchBar *searchBar;
+    
+    BOOL isSearchOn;
+    BOOL canSelectRow;
+    
+    NSMutableArray *listOfMovies;
+    NSMutableArray *searchResult;
+    
+}
+
+@property(nonatomic, retain)NSDictionary *moiveTitles;
+
+@property(nonatomic, retain)NSArray *years;
+
+@property(nonatomic, retain)UISearchBar *searchBar;
+
+-(void) doneSearch:(id)sender;
+-(void) searchMoviesTableView;
 
 @end

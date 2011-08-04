@@ -10,49 +10,73 @@
 
 @implementation RootViewController
 
+@synthesize moiveTitles,years,searchBar;
 
 - (void)viewDidLoad
 {
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"Movies" ofType:@"plist"];
+    
+    NSDictionary *dic = [[NSDictionary alloc] initWithContentsOfFile:path];
+    
+    self.moiveTitles = dic;
+    
+    NSArray *array = [[self.moiveTitles allKeys] sortedArrayUsingSelector:@selector(compare:)];
+    
+    self.years = array;
+    
+    listOfMovies = [[NSMutableArray alloc] init];
+    for (NSString *year in array) 
+    {
+        NSArray *movies = [moiveTitles objectForKey:year];
+        
+        for (NSString *title in movies) {
+            [listOfMovies addObject:title];
+        }
+    }
+    
+    searchResult = [[NSMutableArray alloc] init];
+    isSearchOn = NO;
+    canSelectRow = YES;
+
+    
+    CGRect tableFrame  = [self.tableView frame];
+    CGRect searchRect = tableFrame;
+    searchRect.size.height = 40;
+    searchBar = [[UISearchBar alloc] initWithFrame:searchRect];
+    searchBar.delegate = self;
+    self.tableView.tableHeaderView = searchBar;
+    self.searchBar.autocorrectionType = UITextAutocorrectionTypeYes;
+    
+    [dic release];
     [super viewDidLoad];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-	[super viewDidDisappear:animated];
-}
-
-/*
- // Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	// Return YES for supported orientations.
-	return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
- */
 
 // Customize the number of sections in the table view.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    if (isSearchOn) {
+        return 1;
+    }
+    else
+    {
+        return [self.years count];
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    if (isSearchOn) {
+        return [searchResult count];
+    }
+    else
+    {
+        NSString *year = [years objectAtIndex:section];
+    
+        NSArray *movieArray = [self.moiveTitles objectForKey:year];
+    
+        return [movieArray count];
+    }
 }
 
 // Customize the appearance of table view cells.
@@ -66,49 +90,111 @@
     }
 
     // Configure the cell.
+    if (isSearchOn) {
+        NSString *cellValue = [searchResult objectAtIndex:indexPath.row];
+        cell.textLabel.text = cellValue;
+    }
+    else
+    {
+    
+        NSString *year = [self.years objectAtIndex:[indexPath section]];
+    
+        NSArray *movieSection = [self.moiveTitles objectForKey:year];
+    
+        cell.textLabel.text = [movieSection objectAtIndex:[indexPath row]];
+        
+        cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+    }
+    
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete)
-    {
-        // Delete the row from the data source.
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    NSString *year = [self.years objectAtIndex:section];
+    
+    if (isSearchOn) {
+        return nil;
     }
-    else if (editingStyle == UITableViewCellEditingStyleInsert)
+    else{
+        return  year;
+    }
+    
+}
+
+//searchBar delegate
+-(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    isSearchOn = YES;
+    canSelectRow = NO;
+    
+    self.tableView.scrollEnabled = NO;
+    
+    //加入search的按钮
+    self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneSearch:)] autorelease];
+    
+}
+
+-(void)doneSearch:(id)sender
+{
+    isSearchOn = NO;
+    canSelectRow = YES;
+    self.tableView.scrollEnabled = YES;
+    
+    self.navigationItem.rightBarButtonItem = nil;
+    
+    [searchBar resignFirstResponder];
+    
+    [self.tableView reloadData];
+}
+
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    if ([searchText length] > 0) {
+        isSearchOn = YES;
+        canSelectRow = YES;
+        self.tableView.scrollEnabled = YES;
+        [self searchMoviesTableView];
+    }
+    else
     {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }   
+        isSearchOn = NO;
+        canSelectRow = NO;
+        self.tableView.scrollEnabled = NO;
+    }
+    [self.tableView reloadData];
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
+-(void)searchMoviesTableView{
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
+    [searchResult removeAllObjects];
+    
+    for (NSString *str in listOfMovies) {
+        NSRange titleResultRange = [str rangeOfString:searchBar.text 
+                                              options:NSCaseInsensitiveSearch];
+    
+        if(titleResultRange.length > 0)
+        {
+            [searchResult addObject:str];
+        }
+    }
 }
-*/
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+
+    [self searchMoviesTableView];
+}
+
+-(NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (canSelectRow) {
+        return  indexPath;
+    }
+    else{
+        return  nil;
+    }
+
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -139,6 +225,11 @@
 
 - (void)dealloc
 {
+    [searchResult release];
+    [listOfMovies release];
+    [searchBar release];
+    [moiveTitles release];
+    [years release];
     [super dealloc];
 }
 
