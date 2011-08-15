@@ -1,0 +1,492 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C1258FCF13F251E700A71EE1 /* SingleComponentPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1258FCD13F251E700A71EE1 /* SingleComponentPickerViewController.m */; };
+		C1258FD013F251E700A71EE1 /* SingleComponentPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1258FCE13F251E700A71EE1 /* SingleComponentPickerViewController.xib */; };
+		C1258FD413F2535F00A71EE1 /* DoubleComponentPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1258FD213F2535F00A71EE1 /* DoubleComponentPickerViewController.m */; };
+		C1258FD513F2535F00A71EE1 /* DoubleComponentPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1258FD313F2535F00A71EE1 /* DoubleComponentPickerViewController.xib */; };
+		C1258FD913F2538D00A71EE1 /* DependentComponentPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1258FD713F2538D00A71EE1 /* DependentComponentPickerViewController.m */; };
+		C1258FDA13F2538D00A71EE1 /* DependentComponentPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1258FD813F2538D00A71EE1 /* DependentComponentPickerViewController.xib */; };
+		C1258FDE13F2541C00A71EE1 /* CustomPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1258FDC13F2541C00A71EE1 /* CustomPickerViewController.m */; };
+		C1258FDF13F2541C00A71EE1 /* CustomPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1258FDD13F2541C00A71EE1 /* CustomPickerViewController.xib */; };
+		C1258FE313F255F100A71EE1 /* DatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1258FE113F255F100A71EE1 /* DatePickerViewController.m */; };
+		C1258FE413F255F100A71EE1 /* DatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1258FE213F255F100A71EE1 /* DatePickerViewController.xib */; };
+		C1258FEA13F2560D00A71EE1 /* clockicon.png in Resources */ = {isa = PBXBuildFile; fileRef = C1258FE513F2560D00A71EE1 /* clockicon.png */; };
+		C1258FEB13F2560D00A71EE1 /* dependenticon.png in Resources */ = {isa = PBXBuildFile; fileRef = C1258FE613F2560D00A71EE1 /* dependenticon.png */; };
+		C1258FEC13F2560D00A71EE1 /* doubleicon.png in Resources */ = {isa = PBXBuildFile; fileRef = C1258FE713F2560D00A71EE1 /* doubleicon.png */; };
+		C1258FED13F2560D00A71EE1 /* singleicon.png in Resources */ = {isa = PBXBuildFile; fileRef = C1258FE813F2560D00A71EE1 /* singleicon.png */; };
+		C1258FEE13F2560D00A71EE1 /* toolicon.png in Resources */ = {isa = PBXBuildFile; fileRef = C1258FE913F2560D00A71EE1 /* toolicon.png */; };
+		C14C921913F4D9010043FC9F /* statedictionary.plist in Resources */ = {isa = PBXBuildFile; fileRef = C14C921813F4D9010043FC9F /* statedictionary.plist */; };
+		C14C922313F4F6960043FC9F /* CustomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C14C922213F4F6960043FC9F /* CustomBar.m */; };
+		C14C922513F509AD0043FC9F /* navbg.png in Resources */ = {isa = PBXBuildFile; fileRef = C14C922413F509AD0043FC9F /* navbg.png */; };
+		C14C922713F50F000043FC9F /* navbgs.png in Resources */ = {isa = PBXBuildFile; fileRef = C14C922613F50F000043FC9F /* navbgs.png */; };
+		C18C132E13F12B9400C87E24 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18C132D13F12B9400C87E24 /* UIKit.framework */; };
+		C18C133013F12B9400C87E24 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18C132F13F12B9400C87E24 /* Foundation.framework */; };
+		C18C133213F12B9400C87E24 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18C133113F12B9400C87E24 /* CoreGraphics.framework */; };
+		C18C133813F12B9500C87E24 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C18C133613F12B9500C87E24 /* InfoPlist.strings */; };
+		C18C133A13F12B9500C87E24 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C18C133913F12B9500C87E24 /* main.m */; };
+		C18C133E13F12B9500C87E24 /* NavDemoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C18C133D13F12B9500C87E24 /* NavDemoAppDelegate.m */; };
+		C18C134113F12B9500C87E24 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = C18C133F13F12B9500C87E24 /* MainWindow.xib */; };
+		C18C135913F137E900C87E24 /* SwitchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C18C135713F137E900C87E24 /* SwitchViewController.m */; };
+		C18C135A13F137E900C87E24 /* SwitchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C18C135813F137E900C87E24 /* SwitchViewController.xib */; };
+		C1C1EB2613F19488003EDEF3 /* BlueView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C1EB2413F19488003EDEF3 /* BlueView.m */; };
+		C1C1EB2713F19488003EDEF3 /* BlueView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1C1EB2513F19488003EDEF3 /* BlueView.xib */; };
+		C1C1EB2C13F194B2003EDEF3 /* YellowView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C1EB2A13F194B2003EDEF3 /* YellowView.m */; };
+		C1C1EB2D13F194B2003EDEF3 /* YellowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1C1EB2B13F194B2003EDEF3 /* YellowView.xib */; };
+		C1D413C613F7867000CFB29D /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = C1D413B313F7867000CFB29D /* ASIAuthenticationDialog.m */; };
+		C1D413C713F7867000CFB29D /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = C1D413B613F7867000CFB29D /* ASIDataCompressor.m */; };
+		C1D413C813F7867000CFB29D /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = C1D413B813F7867000CFB29D /* ASIDataDecompressor.m */; };
+		C1D413C913F7867000CFB29D /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C1D413BA13F7867000CFB29D /* ASIDownloadCache.m */; };
+		C1D413CA13F7867000CFB29D /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C1D413BC13F7867000CFB29D /* ASIFormDataRequest.m */; };
+		C1D413CB13F7867000CFB29D /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C1D413BE13F7867000CFB29D /* ASIHTTPRequest.m */; };
+		C1D413CC13F7867000CFB29D /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = C1D413C213F7867000CFB29D /* ASIInputStream.m */; };
+		C1D413CD13F7867000CFB29D /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = C1D413C413F7867000CFB29D /* ASINetworkQueue.m */; };
+		C1D413D013F786A700CFB29D /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C1D413CF13F786A700CFB29D /* Reachability.m */; };
+		C1D413D213F787F200CFB29D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1D413D113F787F200CFB29D /* CFNetwork.framework */; };
+		C1D413D413F7880C00CFB29D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1D413D313F7880C00CFB29D /* SystemConfiguration.framework */; };
+		C1D413D613F7883800CFB29D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1D413D513F7883800CFB29D /* MobileCoreServices.framework */; };
+		C1D413D813F78AE200CFB29D /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C1D413D713F78AE200CFB29D /* libz.1.2.3.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C1258FCC13F251E700A71EE1 /* SingleComponentPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleComponentPickerViewController.h; sourceTree = "<group>"; };
+		C1258FCD13F251E700A71EE1 /* SingleComponentPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleComponentPickerViewController.m; sourceTree = "<group>"; };
+		C1258FCE13F251E700A71EE1 /* SingleComponentPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SingleComponentPickerViewController.xib; path = NavDemo/SingleComponentPickerViewController.xib; sourceTree = "<group>"; };
+		C1258FD113F2535F00A71EE1 /* DoubleComponentPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubleComponentPickerViewController.h; sourceTree = "<group>"; };
+		C1258FD213F2535F00A71EE1 /* DoubleComponentPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoubleComponentPickerViewController.m; sourceTree = "<group>"; };
+		C1258FD313F2535F00A71EE1 /* DoubleComponentPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DoubleComponentPickerViewController.xib; path = NavDemo/DoubleComponentPickerViewController.xib; sourceTree = "<group>"; };
+		C1258FD613F2538D00A71EE1 /* DependentComponentPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DependentComponentPickerViewController.h; sourceTree = "<group>"; };
+		C1258FD713F2538D00A71EE1 /* DependentComponentPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DependentComponentPickerViewController.m; sourceTree = "<group>"; };
+		C1258FD813F2538D00A71EE1 /* DependentComponentPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DependentComponentPickerViewController.xib; path = NavDemo/DependentComponentPickerViewController.xib; sourceTree = "<group>"; };
+		C1258FDB13F2541C00A71EE1 /* CustomPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPickerViewController.h; sourceTree = "<group>"; };
+		C1258FDC13F2541C00A71EE1 /* CustomPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPickerViewController.m; sourceTree = "<group>"; };
+		C1258FDD13F2541C00A71EE1 /* CustomPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomPickerViewController.xib; path = NavDemo/CustomPickerViewController.xib; sourceTree = "<group>"; };
+		C1258FE013F255F100A71EE1 /* DatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerViewController.h; sourceTree = "<group>"; };
+		C1258FE113F255F100A71EE1 /* DatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerViewController.m; sourceTree = "<group>"; };
+		C1258FE213F255F100A71EE1 /* DatePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DatePickerViewController.xib; path = NavDemo/DatePickerViewController.xib; sourceTree = "<group>"; };
+		C1258FE513F2560D00A71EE1 /* clockicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = clockicon.png; path = "Tab Bar Icons/clockicon.png"; sourceTree = "<group>"; };
+		C1258FE613F2560D00A71EE1 /* dependenticon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dependenticon.png; path = "Tab Bar Icons/dependenticon.png"; sourceTree = "<group>"; };
+		C1258FE713F2560D00A71EE1 /* doubleicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = doubleicon.png; path = "Tab Bar Icons/doubleicon.png"; sourceTree = "<group>"; };
+		C1258FE813F2560D00A71EE1 /* singleicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = singleicon.png; path = "Tab Bar Icons/singleicon.png"; sourceTree = "<group>"; };
+		C1258FE913F2560D00A71EE1 /* toolicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = toolicon.png; path = "Tab Bar Icons/toolicon.png"; sourceTree = "<group>"; };
+		C14C921813F4D9010043FC9F /* statedictionary.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = statedictionary.plist; sourceTree = "<group>"; };
+		C14C922113F4F6960043FC9F /* CustomBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomBar.h; sourceTree = "<group>"; };
+		C14C922213F4F6960043FC9F /* CustomBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomBar.m; sourceTree = "<group>"; };
+		C14C922413F509AD0043FC9F /* navbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navbg.png; sourceTree = "<group>"; };
+		C14C922613F50F000043FC9F /* navbgs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navbgs.png; sourceTree = "<group>"; };
+		C18C132913F12B9400C87E24 /* NavDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C18C132D13F12B9400C87E24 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C18C132F13F12B9400C87E24 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C18C133113F12B9400C87E24 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C18C133513F12B9500C87E24 /* NavDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NavDemo-Info.plist"; sourceTree = "<group>"; };
+		C18C133713F12B9500C87E24 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C18C133913F12B9500C87E24 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C18C133B13F12B9500C87E24 /* NavDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NavDemo-Prefix.pch"; sourceTree = "<group>"; };
+		C18C133C13F12B9500C87E24 /* NavDemoAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavDemoAppDelegate.h; sourceTree = "<group>"; };
+		C18C133D13F12B9500C87E24 /* NavDemoAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavDemoAppDelegate.m; sourceTree = "<group>"; };
+		C18C134013F12B9500C87E24 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		C18C135613F137E800C87E24 /* SwitchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchViewController.h; sourceTree = "<group>"; };
+		C18C135713F137E900C87E24 /* SwitchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchViewController.m; sourceTree = "<group>"; };
+		C18C135813F137E900C87E24 /* SwitchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SwitchViewController.xib; path = NavDemo/SwitchViewController.xib; sourceTree = "<group>"; };
+		C1C1EB2313F19488003EDEF3 /* BlueView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlueView.h; sourceTree = "<group>"; };
+		C1C1EB2413F19488003EDEF3 /* BlueView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlueView.m; sourceTree = "<group>"; };
+		C1C1EB2513F19488003EDEF3 /* BlueView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BlueView.xib; path = NavDemo/BlueView.xib; sourceTree = "<group>"; };
+		C1C1EB2913F194B2003EDEF3 /* YellowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YellowView.h; sourceTree = "<group>"; };
+		C1C1EB2A13F194B2003EDEF3 /* YellowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YellowView.m; sourceTree = "<group>"; };
+		C1C1EB2B13F194B2003EDEF3 /* YellowView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = YellowView.xib; path = NavDemo/YellowView.xib; sourceTree = "<group>"; };
+		C1D413B213F7867000CFB29D /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
+		C1D413B313F7867000CFB29D /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
+		C1D413B413F7867000CFB29D /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
+		C1D413B513F7867000CFB29D /* ASIDataCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataCompressor.h; sourceTree = "<group>"; };
+		C1D413B613F7867000CFB29D /* ASIDataCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataCompressor.m; sourceTree = "<group>"; };
+		C1D413B713F7867000CFB29D /* ASIDataDecompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataDecompressor.h; sourceTree = "<group>"; };
+		C1D413B813F7867000CFB29D /* ASIDataDecompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataDecompressor.m; sourceTree = "<group>"; };
+		C1D413B913F7867000CFB29D /* ASIDownloadCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDownloadCache.h; sourceTree = "<group>"; };
+		C1D413BA13F7867000CFB29D /* ASIDownloadCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDownloadCache.m; sourceTree = "<group>"; };
+		C1D413BB13F7867000CFB29D /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIFormDataRequest.h; sourceTree = "<group>"; };
+		C1D413BC13F7867000CFB29D /* ASIFormDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIFormDataRequest.m; sourceTree = "<group>"; };
+		C1D413BD13F7867000CFB29D /* ASIHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequest.h; sourceTree = "<group>"; };
+		C1D413BE13F7867000CFB29D /* ASIHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIHTTPRequest.m; sourceTree = "<group>"; };
+		C1D413BF13F7867000CFB29D /* ASIHTTPRequestConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequestConfig.h; sourceTree = "<group>"; };
+		C1D413C013F7867000CFB29D /* ASIHTTPRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequestDelegate.h; sourceTree = "<group>"; };
+		C1D413C113F7867000CFB29D /* ASIInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIInputStream.h; sourceTree = "<group>"; };
+		C1D413C213F7867000CFB29D /* ASIInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIInputStream.m; sourceTree = "<group>"; };
+		C1D413C313F7867000CFB29D /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASINetworkQueue.h; sourceTree = "<group>"; };
+		C1D413C413F7867000CFB29D /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASINetworkQueue.m; sourceTree = "<group>"; };
+		C1D413C513F7867000CFB29D /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIProgressDelegate.h; sourceTree = "<group>"; };
+		C1D413CE13F786A700CFB29D /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		C1D413CF13F786A700CFB29D /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		C1D413D113F787F200CFB29D /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		C1D413D313F7880C00CFB29D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C1D413D513F7883800CFB29D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		C1D413D713F78AE200CFB29D /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C18C132613F12B9400C87E24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1D413D813F78AE200CFB29D /* libz.1.2.3.dylib in Frameworks */,
+				C1D413D613F7883800CFB29D /* MobileCoreServices.framework in Frameworks */,
+				C1D413D413F7880C00CFB29D /* SystemConfiguration.framework in Frameworks */,
+				C1D413D213F787F200CFB29D /* CFNetwork.framework in Frameworks */,
+				C18C132E13F12B9400C87E24 /* UIKit.framework in Frameworks */,
+				C18C133013F12B9400C87E24 /* Foundation.framework in Frameworks */,
+				C18C133213F12B9400C87E24 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C18C131E13F12B9400C87E24 = {
+			isa = PBXGroup;
+			children = (
+				C18C135513F137C700C87E24 /* Resource */,
+				C18C133313F12B9400C87E24 /* NavDemo */,
+				C18C132C13F12B9400C87E24 /* Frameworks */,
+				C18C132A13F12B9400C87E24 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C18C132A13F12B9400C87E24 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C18C132913F12B9400C87E24 /* NavDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C18C132C13F12B9400C87E24 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C1D413D713F78AE200CFB29D /* libz.1.2.3.dylib */,
+				C1D413D513F7883800CFB29D /* MobileCoreServices.framework */,
+				C1D413D313F7880C00CFB29D /* SystemConfiguration.framework */,
+				C1D413D113F787F200CFB29D /* CFNetwork.framework */,
+				C18C132D13F12B9400C87E24 /* UIKit.framework */,
+				C18C132F13F12B9400C87E24 /* Foundation.framework */,
+				C18C133113F12B9400C87E24 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C18C133313F12B9400C87E24 /* NavDemo */ = {
+			isa = PBXGroup;
+			children = (
+				C1D413B113F7867000CFB29D /* ASIHTTP */,
+				C14C922113F4F6960043FC9F /* CustomBar.h */,
+				C14C922213F4F6960043FC9F /* CustomBar.m */,
+				C1258FE013F255F100A71EE1 /* DatePickerViewController.h */,
+				C1258FE113F255F100A71EE1 /* DatePickerViewController.m */,
+				C1C1EB2313F19488003EDEF3 /* BlueView.h */,
+				C1C1EB2413F19488003EDEF3 /* BlueView.m */,
+				C1258FDB13F2541C00A71EE1 /* CustomPickerViewController.h */,
+				C1258FDC13F2541C00A71EE1 /* CustomPickerViewController.m */,
+				C1258FD613F2538D00A71EE1 /* DependentComponentPickerViewController.h */,
+				C1258FD713F2538D00A71EE1 /* DependentComponentPickerViewController.m */,
+				C1258FD113F2535F00A71EE1 /* DoubleComponentPickerViewController.h */,
+				C1258FD213F2535F00A71EE1 /* DoubleComponentPickerViewController.m */,
+				C18C133C13F12B9500C87E24 /* NavDemoAppDelegate.h */,
+				C18C133D13F12B9500C87E24 /* NavDemoAppDelegate.m */,
+				C1258FCC13F251E700A71EE1 /* SingleComponentPickerViewController.h */,
+				C1258FCD13F251E700A71EE1 /* SingleComponentPickerViewController.m */,
+				C18C135613F137E800C87E24 /* SwitchViewController.h */,
+				C18C135713F137E900C87E24 /* SwitchViewController.m */,
+				C1C1EB2913F194B2003EDEF3 /* YellowView.h */,
+				C1C1EB2A13F194B2003EDEF3 /* YellowView.m */,
+				C18C133413F12B9500C87E24 /* Supporting Files */,
+			);
+			path = NavDemo;
+			sourceTree = "<group>";
+		};
+		C18C133413F12B9500C87E24 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C18C133513F12B9500C87E24 /* NavDemo-Info.plist */,
+				C18C133613F12B9500C87E24 /* InfoPlist.strings */,
+				C18C133913F12B9500C87E24 /* main.m */,
+				C18C133B13F12B9500C87E24 /* NavDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C18C135513F137C700C87E24 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				C14C922613F50F000043FC9F /* navbgs.png */,
+				C14C922413F509AD0043FC9F /* navbg.png */,
+				C14C921813F4D9010043FC9F /* statedictionary.plist */,
+				C1258FE513F2560D00A71EE1 /* clockicon.png */,
+				C1258FE613F2560D00A71EE1 /* dependenticon.png */,
+				C1258FE713F2560D00A71EE1 /* doubleicon.png */,
+				C1258FE813F2560D00A71EE1 /* singleicon.png */,
+				C1258FE913F2560D00A71EE1 /* toolicon.png */,
+				C1258FDD13F2541C00A71EE1 /* CustomPickerViewController.xib */,
+				C1258FE213F255F100A71EE1 /* DatePickerViewController.xib */,
+				C1258FD813F2538D00A71EE1 /* DependentComponentPickerViewController.xib */,
+				C1258FD313F2535F00A71EE1 /* DoubleComponentPickerViewController.xib */,
+				C1C1EB2513F19488003EDEF3 /* BlueView.xib */,
+				C18C133F13F12B9500C87E24 /* MainWindow.xib */,
+				C1258FCE13F251E700A71EE1 /* SingleComponentPickerViewController.xib */,
+				C18C135813F137E900C87E24 /* SwitchViewController.xib */,
+				C1C1EB2B13F194B2003EDEF3 /* YellowView.xib */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		C1D413B113F7867000CFB29D /* ASIHTTP */ = {
+			isa = PBXGroup;
+			children = (
+				C1D413CE13F786A700CFB29D /* Reachability.h */,
+				C1D413CF13F786A700CFB29D /* Reachability.m */,
+				C1D413B213F7867000CFB29D /* ASIAuthenticationDialog.h */,
+				C1D413B313F7867000CFB29D /* ASIAuthenticationDialog.m */,
+				C1D413B413F7867000CFB29D /* ASICacheDelegate.h */,
+				C1D413B513F7867000CFB29D /* ASIDataCompressor.h */,
+				C1D413B613F7867000CFB29D /* ASIDataCompressor.m */,
+				C1D413B713F7867000CFB29D /* ASIDataDecompressor.h */,
+				C1D413B813F7867000CFB29D /* ASIDataDecompressor.m */,
+				C1D413B913F7867000CFB29D /* ASIDownloadCache.h */,
+				C1D413BA13F7867000CFB29D /* ASIDownloadCache.m */,
+				C1D413BB13F7867000CFB29D /* ASIFormDataRequest.h */,
+				C1D413BC13F7867000CFB29D /* ASIFormDataRequest.m */,
+				C1D413BD13F7867000CFB29D /* ASIHTTPRequest.h */,
+				C1D413BE13F7867000CFB29D /* ASIHTTPRequest.m */,
+				C1D413BF13F7867000CFB29D /* ASIHTTPRequestConfig.h */,
+				C1D413C013F7867000CFB29D /* ASIHTTPRequestDelegate.h */,
+				C1D413C113F7867000CFB29D /* ASIInputStream.h */,
+				C1D413C213F7867000CFB29D /* ASIInputStream.m */,
+				C1D413C313F7867000CFB29D /* ASINetworkQueue.h */,
+				C1D413C413F7867000CFB29D /* ASINetworkQueue.m */,
+				C1D413C513F7867000CFB29D /* ASIProgressDelegate.h */,
+			);
+			path = ASIHTTP;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C18C132813F12B9400C87E24 /* NavDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C18C134A13F12B9500C87E24 /* Build configuration list for PBXNativeTarget "NavDemo" */;
+			buildPhases = (
+				C18C132513F12B9400C87E24 /* Sources */,
+				C18C132613F12B9400C87E24 /* Frameworks */,
+				C18C132713F12B9400C87E24 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NavDemo;
+			productName = NavDemo;
+			productReference = C18C132913F12B9400C87E24 /* NavDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C18C132013F12B9400C87E24 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "博客园";
+			};
+			buildConfigurationList = C18C132313F12B9400C87E24 /* Build configuration list for PBXProject "NavDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C18C131E13F12B9400C87E24;
+			productRefGroup = C18C132A13F12B9400C87E24 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C18C132813F12B9400C87E24 /* NavDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C18C132713F12B9400C87E24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C18C133813F12B9500C87E24 /* InfoPlist.strings in Resources */,
+				C18C134113F12B9500C87E24 /* MainWindow.xib in Resources */,
+				C18C135A13F137E900C87E24 /* SwitchViewController.xib in Resources */,
+				C1C1EB2713F19488003EDEF3 /* BlueView.xib in Resources */,
+				C1C1EB2D13F194B2003EDEF3 /* YellowView.xib in Resources */,
+				C1258FD013F251E700A71EE1 /* SingleComponentPickerViewController.xib in Resources */,
+				C1258FD513F2535F00A71EE1 /* DoubleComponentPickerViewController.xib in Resources */,
+				C1258FDA13F2538D00A71EE1 /* DependentComponentPickerViewController.xib in Resources */,
+				C1258FDF13F2541C00A71EE1 /* CustomPickerViewController.xib in Resources */,
+				C1258FE413F255F100A71EE1 /* DatePickerViewController.xib in Resources */,
+				C1258FEA13F2560D00A71EE1 /* clockicon.png in Resources */,
+				C1258FEB13F2560D00A71EE1 /* dependenticon.png in Resources */,
+				C1258FEC13F2560D00A71EE1 /* doubleicon.png in Resources */,
+				C1258FED13F2560D00A71EE1 /* singleicon.png in Resources */,
+				C1258FEE13F2560D00A71EE1 /* toolicon.png in Resources */,
+				C14C921913F4D9010043FC9F /* statedictionary.plist in Resources */,
+				C14C922513F509AD0043FC9F /* navbg.png in Resources */,
+				C14C922713F50F000043FC9F /* navbgs.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C18C132513F12B9400C87E24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C18C133A13F12B9500C87E24 /* main.m in Sources */,
+				C18C133E13F12B9500C87E24 /* NavDemoAppDelegate.m in Sources */,
+				C18C135913F137E900C87E24 /* SwitchViewController.m in Sources */,
+				C1C1EB2613F19488003EDEF3 /* BlueView.m in Sources */,
+				C1C1EB2C13F194B2003EDEF3 /* YellowView.m in Sources */,
+				C1258FCF13F251E700A71EE1 /* SingleComponentPickerViewController.m in Sources */,
+				C1258FD413F2535F00A71EE1 /* DoubleComponentPickerViewController.m in Sources */,
+				C1258FD913F2538D00A71EE1 /* DependentComponentPickerViewController.m in Sources */,
+				C1258FDE13F2541C00A71EE1 /* CustomPickerViewController.m in Sources */,
+				C1258FE313F255F100A71EE1 /* DatePickerViewController.m in Sources */,
+				C14C922313F4F6960043FC9F /* CustomBar.m in Sources */,
+				C1D413C613F7867000CFB29D /* ASIAuthenticationDialog.m in Sources */,
+				C1D413C713F7867000CFB29D /* ASIDataCompressor.m in Sources */,
+				C1D413C813F7867000CFB29D /* ASIDataDecompressor.m in Sources */,
+				C1D413C913F7867000CFB29D /* ASIDownloadCache.m in Sources */,
+				C1D413CA13F7867000CFB29D /* ASIFormDataRequest.m in Sources */,
+				C1D413CB13F7867000CFB29D /* ASIHTTPRequest.m in Sources */,
+				C1D413CC13F7867000CFB29D /* ASIInputStream.m in Sources */,
+				C1D413CD13F7867000CFB29D /* ASINetworkQueue.m in Sources */,
+				C1D413D013F786A700CFB29D /* Reachability.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C18C133613F12B9500C87E24 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C18C133713F12B9500C87E24 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C18C133F13F12B9500C87E24 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C18C134013F12B9500C87E24 /* en */,
+			);
+			name = MainWindow.xib;
+			path = NavDemo;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C18C134813F12B9500C87E24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Debug;
+		};
+		C18C134913F12B9500C87E24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C18C134B13F12B9500C87E24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NavDemo/NavDemo-Prefix.pch";
+				INFOPLIST_FILE = "NavDemo/NavDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C18C134C13F12B9500C87E24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NavDemo/NavDemo-Prefix.pch";
+				INFOPLIST_FILE = "NavDemo/NavDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C18C132313F12B9400C87E24 /* Build configuration list for PBXProject "NavDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C18C134813F12B9500C87E24 /* Debug */,
+				C18C134913F12B9500C87E24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C18C134A13F12B9500C87E24 /* Build configuration list for PBXNativeTarget "NavDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C18C134B13F12B9500C87E24 /* Debug */,
+				C18C134C13F12B9500C87E24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C18C132013F12B9400C87E24 /* Project object */;
+}
