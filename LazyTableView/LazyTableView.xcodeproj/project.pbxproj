@@ -1,0 +1,291 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C1D413EC13F8F3AC00CFB29D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1D413EB13F8F3AC00CFB29D /* UIKit.framework */; };
+		C1D413EE13F8F3AC00CFB29D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1D413ED13F8F3AC00CFB29D /* Foundation.framework */; };
+		C1D413F013F8F3AC00CFB29D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1D413EF13F8F3AC00CFB29D /* CoreGraphics.framework */; };
+		C1D413F613F8F3AC00CFB29D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C1D413F413F8F3AC00CFB29D /* InfoPlist.strings */; };
+		C1D413F813F8F3AC00CFB29D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C1D413F713F8F3AC00CFB29D /* main.m */; };
+		C1D413FC13F8F3AC00CFB29D /* LazyTableViewAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C1D413FB13F8F3AC00CFB29D /* LazyTableViewAppDelegate.m */; };
+		C1D413FF13F8F3AC00CFB29D /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1D413FD13F8F3AC00CFB29D /* MainWindow.xib */; };
+		C1D4140213F8F3AC00CFB29D /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1D4140113F8F3AC00CFB29D /* RootViewController.m */; };
+		C1D4140513F8F3AC00CFB29D /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1D4140313F8F3AC00CFB29D /* RootViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C1D413E713F8F3AC00CFB29D /* LazyTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1D413EB13F8F3AC00CFB29D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C1D413ED13F8F3AC00CFB29D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C1D413EF13F8F3AC00CFB29D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C1D413F313F8F3AC00CFB29D /* LazyTableView-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LazyTableView-Info.plist"; sourceTree = "<group>"; };
+		C1D413F513F8F3AC00CFB29D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C1D413F713F8F3AC00CFB29D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C1D413F913F8F3AC00CFB29D /* LazyTableView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LazyTableView-Prefix.pch"; sourceTree = "<group>"; };
+		C1D413FA13F8F3AC00CFB29D /* LazyTableViewAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LazyTableViewAppDelegate.h; sourceTree = "<group>"; };
+		C1D413FB13F8F3AC00CFB29D /* LazyTableViewAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LazyTableViewAppDelegate.m; sourceTree = "<group>"; };
+		C1D413FE13F8F3AC00CFB29D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		C1D4140013F8F3AC00CFB29D /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		C1D4140113F8F3AC00CFB29D /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		C1D4140413F8F3AC00CFB29D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C1D413E413F8F3AC00CFB29D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1D413EC13F8F3AC00CFB29D /* UIKit.framework in Frameworks */,
+				C1D413EE13F8F3AC00CFB29D /* Foundation.framework in Frameworks */,
+				C1D413F013F8F3AC00CFB29D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C1D413DC13F8F3AB00CFB29D = {
+			isa = PBXGroup;
+			children = (
+				C1D413F113F8F3AC00CFB29D /* LazyTableView */,
+				C1D413EA13F8F3AC00CFB29D /* Frameworks */,
+				C1D413E813F8F3AC00CFB29D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C1D413E813F8F3AC00CFB29D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C1D413E713F8F3AC00CFB29D /* LazyTableView.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C1D413EA13F8F3AC00CFB29D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C1D413EB13F8F3AC00CFB29D /* UIKit.framework */,
+				C1D413ED13F8F3AC00CFB29D /* Foundation.framework */,
+				C1D413EF13F8F3AC00CFB29D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C1D413F113F8F3AC00CFB29D /* LazyTableView */ = {
+			isa = PBXGroup;
+			children = (
+				C1D413FA13F8F3AC00CFB29D /* LazyTableViewAppDelegate.h */,
+				C1D413FB13F8F3AC00CFB29D /* LazyTableViewAppDelegate.m */,
+				C1D413FD13F8F3AC00CFB29D /* MainWindow.xib */,
+				C1D4140013F8F3AC00CFB29D /* RootViewController.h */,
+				C1D4140113F8F3AC00CFB29D /* RootViewController.m */,
+				C1D4140313F8F3AC00CFB29D /* RootViewController.xib */,
+				C1D413F213F8F3AC00CFB29D /* Supporting Files */,
+			);
+			path = LazyTableView;
+			sourceTree = "<group>";
+		};
+		C1D413F213F8F3AC00CFB29D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C1D413F313F8F3AC00CFB29D /* LazyTableView-Info.plist */,
+				C1D413F413F8F3AC00CFB29D /* InfoPlist.strings */,
+				C1D413F713F8F3AC00CFB29D /* main.m */,
+				C1D413F913F8F3AC00CFB29D /* LazyTableView-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C1D413E613F8F3AC00CFB29D /* LazyTableView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C1D4140813F8F3AC00CFB29D /* Build configuration list for PBXNativeTarget "LazyTableView" */;
+			buildPhases = (
+				C1D413E313F8F3AC00CFB29D /* Sources */,
+				C1D413E413F8F3AC00CFB29D /* Frameworks */,
+				C1D413E513F8F3AC00CFB29D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LazyTableView;
+			productName = LazyTableView;
+			productReference = C1D413E713F8F3AC00CFB29D /* LazyTableView.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C1D413DE13F8F3AB00CFB29D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "博客园";
+			};
+			buildConfigurationList = C1D413E113F8F3AB00CFB29D /* Build configuration list for PBXProject "LazyTableView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C1D413DC13F8F3AB00CFB29D;
+			productRefGroup = C1D413E813F8F3AC00CFB29D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C1D413E613F8F3AC00CFB29D /* LazyTableView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C1D413E513F8F3AC00CFB29D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1D413F613F8F3AC00CFB29D /* InfoPlist.strings in Resources */,
+				C1D413FF13F8F3AC00CFB29D /* MainWindow.xib in Resources */,
+				C1D4140513F8F3AC00CFB29D /* RootViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C1D413E313F8F3AC00CFB29D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1D413F813F8F3AC00CFB29D /* main.m in Sources */,
+				C1D413FC13F8F3AC00CFB29D /* LazyTableViewAppDelegate.m in Sources */,
+				C1D4140213F8F3AC00CFB29D /* RootViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C1D413F413F8F3AC00CFB29D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C1D413F513F8F3AC00CFB29D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C1D413FD13F8F3AC00CFB29D /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C1D413FE13F8F3AC00CFB29D /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		C1D4140313F8F3AC00CFB29D /* RootViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C1D4140413F8F3AC00CFB29D /* en */,
+			);
+			name = RootViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C1D4140613F8F3AC00CFB29D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C1D4140713F8F3AC00CFB29D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C1D4140913F8F3AC00CFB29D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LazyTableView/LazyTableView-Prefix.pch";
+				INFOPLIST_FILE = "LazyTableView/LazyTableView-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C1D4140A13F8F3AC00CFB29D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LazyTableView/LazyTableView-Prefix.pch";
+				INFOPLIST_FILE = "LazyTableView/LazyTableView-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C1D413E113F8F3AB00CFB29D /* Build configuration list for PBXProject "LazyTableView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1D4140613F8F3AC00CFB29D /* Debug */,
+				C1D4140713F8F3AC00CFB29D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C1D4140813F8F3AC00CFB29D /* Build configuration list for PBXNativeTarget "LazyTableView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1D4140913F8F3AC00CFB29D /* Debug */,
+				C1D4140A13F8F3AC00CFB29D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C1D413DE13F8F3AB00CFB29D /* Project object */;
+}
