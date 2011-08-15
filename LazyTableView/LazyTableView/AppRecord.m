@@ -10,6 +10,8 @@
 
 @implementation AppRecord
 
+@synthesize appName,appIcon,appURLString,artist,imageURLString;
+
 - (id)init
 {
     self = [super init];
