@@ -17,6 +17,7 @@
 		C1D4140213F8F3AC00CFB29D /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1D4140113F8F3AC00CFB29D /* RootViewController.m */; };
 		C1D4140513F8F3AC00CFB29D /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1D4140313F8F3AC00CFB29D /* RootViewController.xib */; };
 		C1D4140E13F8F53F00CFB29D /* AppRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = C1D4140D13F8F53F00CFB29D /* AppRecord.m */; };
+		C1F2761913F905D4009833CE /* IconDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F2761813F905D4009833CE /* IconDownloader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,8 @@
 		C1D4140413F8F3AC00CFB29D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
 		C1D4140C13F8F53F00CFB29D /* AppRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppRecord.h; sourceTree = "<group>"; };
 		C1D4140D13F8F53F00CFB29D /* AppRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppRecord.m; sourceTree = "<group>"; };
+		C1F2761713F905D4009833CE /* IconDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconDownloader.h; sourceTree = "<group>"; };
+		C1F2761813F905D4009833CE /* IconDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconDownloader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,13 +85,13 @@
 		C1D413F113F8F3AC00CFB29D /* LazyTableView */ = {
 			isa = PBXGroup;
 			children = (
+				C1F2761513F905B2009833CE /* resource */,
 				C1D4140B13F8F51300CFB29D /* class */,
 				C1D413FA13F8F3AC00CFB29D /* LazyTableViewAppDelegate.h */,
 				C1D413FB13F8F3AC00CFB29D /* LazyTableViewAppDelegate.m */,
 				C1D413FD13F8F3AC00CFB29D /* MainWindow.xib */,
 				C1D4140013F8F3AC00CFB29D /* RootViewController.h */,
 				C1D4140113F8F3AC00CFB29D /* RootViewController.m */,
-				C1D4140313F8F3AC00CFB29D /* RootViewController.xib */,
 				C1D413F213F8F3AC00CFB29D /* Supporting Files */,
 			);
 			path = LazyTableView;
@@ -110,8 +113,18 @@
 			children = (
 				C1D4140C13F8F53F00CFB29D /* AppRecord.h */,
 				C1D4140D13F8F53F00CFB29D /* AppRecord.m */,
+				C1F2761713F905D4009833CE /* IconDownloader.h */,
+				C1F2761813F905D4009833CE /* IconDownloader.m */,
 			);
 			name = class;
+			sourceTree = "<group>";
+		};
+		C1F2761513F905B2009833CE /* resource */ = {
+			isa = PBXGroup;
+			children = (
+				C1D4140313F8F3AC00CFB29D /* RootViewController.xib */,
+			);
+			name = resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +194,7 @@
 				C1D413FC13F8F3AC00CFB29D /* LazyTableViewAppDelegate.m in Sources */,
 				C1D4140213F8F3AC00CFB29D /* RootViewController.m in Sources */,
 				C1D4140E13F8F53F00CFB29D /* AppRecord.m in Sources */,
+				C1F2761913F905D4009833CE /* IconDownloader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +312,7 @@
 				C1D4140A13F8F3AC00CFB29D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

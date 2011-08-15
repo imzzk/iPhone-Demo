@@ -8,6 +8,30 @@
 
 #import <Foundation/Foundation.h>
 
-@interface IconDownloader : NSObject
+@class AppRecord;
+@class RootViewController;
 
+@protocol IconDownloaderDelegate; 
+
+@interface IconDownloader : NSObject
+{
+    AppRecord *appRecord;
+    NSIndexPath *indexPathInTableRow;
+    id<IconDownloaderDelegate> delegate;
+    
+    NSMutableData *activeDownload;
+    NSURLConnection *imageConnection;
+}
+
+@property(nonatomic, retain)AppRecord *appRecord;
+@property(nonatomic, retain)NSIndexPath *indexPathInTableRow;
+@property(nonatomic, assign)id<IconDownloaderDelegate> delegate;
+@property(nonatomic, retain)NSMutableData *activeDownload;
+@property(nonatomic, retain)NSURLConnection *imageConnection;
+
+
+@end
+
+@protocol IconDownloaderDelegate 
+-(void)appImageDidLoad:(NSIndexPath *)indexPath;
 @end

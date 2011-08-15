@@ -22,4 +22,14 @@
     return self;
 }
 
+-(void)dealloc
+{
+    [appIcon release];
+    [appName release];
+    [appURLString release];
+    [artist release];
+    [imageURLString release];
+    [super dealloc];
+}
+
 @end

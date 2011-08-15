@@ -7,8 +7,13 @@
 //
 
 #import "IconDownloader.h"
+#import "AppRecord.h"
+
+#define kAppIconHeight 48;
 
 @implementation IconDownloader
+
+@synthesize imageConnection,appRecord,delegate,activeDownload,indexPathInTableRow;
 
 - (id)init
 {
@@ -19,5 +24,39 @@
     
     return self;
 }
+
+-(void)dealloc
+{
+    [appRecord release];
+    [indexPathInTableRow release];
+    
+    [activeDownload release];
+    [imageConnection cancel];
+    [imageConnection release];
+    
+    [super dealloc];
+}
+
+-(void)startDownload{
+    self.activeDownload = [NSMutableData data];
+    NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:appRecord.imageURLString]] delegate:self];
+    self.imageConnection = conn;
+    [conn release];
+}
+
+-(void)cancelDownload{
+    [self.imageConnection cancel];
+    self.imageConnection = nil;
+    self.activeDownload = nil;
+}
+
+#pragma mark -
+#pragma mark Download support(NSURLConnectionDelegate)
+
+-(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    
+}
+
 
 @end
