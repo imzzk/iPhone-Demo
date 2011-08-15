@@ -16,6 +16,7 @@
 		C1D413FF13F8F3AC00CFB29D /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1D413FD13F8F3AC00CFB29D /* MainWindow.xib */; };
 		C1D4140213F8F3AC00CFB29D /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1D4140113F8F3AC00CFB29D /* RootViewController.m */; };
 		C1D4140513F8F3AC00CFB29D /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1D4140313F8F3AC00CFB29D /* RootViewController.xib */; };
+		C1D4140E13F8F53F00CFB29D /* AppRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = C1D4140D13F8F53F00CFB29D /* AppRecord.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,8 @@
 		C1D4140013F8F3AC00CFB29D /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		C1D4140113F8F3AC00CFB29D /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		C1D4140413F8F3AC00CFB29D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
+		C1D4140C13F8F53F00CFB29D /* AppRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppRecord.h; sourceTree = "<group>"; };
+		C1D4140D13F8F53F00CFB29D /* AppRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppRecord.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +82,7 @@
 		C1D413F113F8F3AC00CFB29D /* LazyTableView */ = {
 			isa = PBXGroup;
 			children = (
+				C1D4140B13F8F51300CFB29D /* class */,
 				C1D413FA13F8F3AC00CFB29D /* LazyTableViewAppDelegate.h */,
 				C1D413FB13F8F3AC00CFB29D /* LazyTableViewAppDelegate.m */,
 				C1D413FD13F8F3AC00CFB29D /* MainWindow.xib */,
@@ -99,6 +103,15 @@
 				C1D413F913F8F3AC00CFB29D /* LazyTableView-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C1D4140B13F8F51300CFB29D /* class */ = {
+			isa = PBXGroup;
+			children = (
+				C1D4140C13F8F53F00CFB29D /* AppRecord.h */,
+				C1D4140D13F8F53F00CFB29D /* AppRecord.m */,
+			);
+			name = class;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +180,7 @@
 				C1D413F813F8F3AC00CFB29D /* main.m in Sources */,
 				C1D413FC13F8F3AC00CFB29D /* LazyTableViewAppDelegate.m in Sources */,
 				C1D4140213F8F3AC00CFB29D /* RootViewController.m in Sources */,
+				C1D4140E13F8F53F00CFB29D /* AppRecord.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
