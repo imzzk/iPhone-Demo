@@ -7,119 +7,161 @@
 //
 
 #import "RootViewController.h"
+#import "AppRecord.h"
+
+#define kCustomRowHeight 60.0
+#define kCustomRowCount 7
+
+#pragma mark -
+
+@interface RootViewController ()
+
+-(void)startIconDownload:(AppRecord *)appRecord forIndexPaht:(NSIndexPath *)indexPath;
+
+@end
 
 @implementation RootViewController
 
+@synthesize entries,imageDownLoadsInProgress;
+
+#pragma mark 
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.imageDownLoadsInProgress = [NSMutableDictionary dictionary];
+    self.tableView.rowHeight = kCustomRowHeight;
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-	[super viewDidDisappear:animated];
-}
-
-/*
- // Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	// Return YES for supported orientations.
-	return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
- */
-
-// Customize the number of sections in the table view.
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
+#pragma mark -
+#pragma mark Table view creation (UITableViewDataSource)
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    int count = [entries count];
+    if (count == 0) {
+        return kCustomRowCount;
+    }
+    return  count;
 }
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"LazyTableCell";
+    static NSString *PlaceholderCellIdentifier = @"PlaceholderCell";
+    
+    int nodeCount = [self.entries count];
+    
+    if (nodeCount == 0 && indexPath.row == 0) {
+        
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:PlaceholderCellIdentifier];
+        if (cell == nil) 
+        {
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault 
+                                           reuseIdentifier:PlaceholderCellIdentifier] autorelease];
+            cell.detailTextLabel.textAlignment = UITextAlignmentCenter;
+			cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        }
+        
+        cell.detailTextLabel.text = @"loading…";
+        
+        return cell;
+    }
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    if (cell == nil)
+    {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+                                       reuseIdentifier:CellIdentifier] autorelease];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
-
-    // Configure the cell.
+    
+    if (nodeCount > 0) {
+        AppRecord *appRecord = [self.entries objectAtIndex:indexPath.row];
+        
+        cell.textLabel.text = appRecord.appName;
+        cell.detailTextLabel.text = appRecord.artist;
+        
+        if (!appRecord.appIcon) {
+            
+            if (self.tableView.dragging == NO && self.tableView.decelerating == NO) 
+            {
+                [self startIconDownload:appRecord forIndexPaht:indexPath];
+            }
+            cell.imageView.image = [UIImage imageNamed:@"Placeholder.png"];
+        }
+        else
+        {
+            cell.imageView.image = appRecord.appIcon;
+        }
+    }
+    
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+#pragma mark -
+#pragma mark Table cell image support
+-(void)startIconDownload:(AppRecord *)appRecord forIndexPaht:(NSIndexPath *)indexPath
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete)
+    IconDownloader *iconDownloader = [imageDownLoadsInProgress objectForKey:indexPath];
+    if (iconDownloader == nil) 
     {
-        // Delete the row from the data source.
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        iconDownloader =[[IconDownloader alloc] init];
+        iconDownloader.appRecord = appRecord;
+        iconDownloader.indexPathInTableRow = indexPath;
+        iconDownloader.delegate = self;
+        [imageDownLoadsInProgress setObject:iconDownloader forKey:indexPath];
+        [iconDownloader startDownload];
+        [iconDownloader release];
     }
-    else if (editingStyle == UITableViewCellEditingStyleInsert)
+}
+
+-(void)loadImagesForOnScreenRows{
+    
+    if ([self.entries count] > 0) 
     {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }   
+        NSArray *visiblePaths = [self.tableView indexPathsForVisibleRows];
+        for (NSIndexPath *indexPath in visiblePaths) 
+        {
+            AppRecord *appRecord = [self.entries objectAtIndex:indexPath.row];
+            
+            if (!appRecord.appIcon)
+            {
+                [self startIconDownload:appRecord forIndexPaht:indexPath];
+            }
+        }
+    }
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+- (void)appImageDidLoad:(NSIndexPath *)indexPath
 {
+    IconDownloader *iconDownloader = [imageDownLoadsInProgress objectForKey:indexPath];
+    if (iconDownloader != nil)
+    {
+        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:iconDownloader.indexPathInTableRow];
+        
+        // Display the newly loaded image
+        cell.imageView.image = iconDownloader.appRecord.appIcon;
+    }
 }
-*/
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+#pragma mark -
+#pragma mark Deferred image loading (UIScrollViewDelegate)
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
+    if (!decelerate)
+    {
+        [self loadImagesForOnScreenRows];
+    }
 }
-*/
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    /*
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-    // ...
-    // Pass the selected object to the new view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
-    [detailViewController release];
-	*/
+    [self loadImagesForOnScreenRows];
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -127,6 +169,9 @@
     [super didReceiveMemoryWarning];
     
     // Relinquish ownership any cached data, images, etc that aren't in use.
+    
+    NSArray *allDownloads = [self.imageDownLoadsInProgress allValues];
+    [allDownloads makeObjectsPerformSelector:@selector(cancelDownload)];
 }
 
 - (void)viewDidUnload
@@ -139,6 +184,8 @@
 
 - (void)dealloc
 {
+    [entries release];
+    [imageDownLoadsInProgress release];
     [super dealloc];
 }
 

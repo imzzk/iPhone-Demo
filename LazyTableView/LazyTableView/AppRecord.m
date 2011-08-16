@@ -12,16 +12,6 @@
 
 @synthesize appName,appIcon,appURLString,artist,imageURLString;
 
-- (id)init
-{
-    self = [super init];
-    if (self) {
-        // Initialization code here.
-    }
-    
-    return self;
-}
-
 -(void)dealloc
 {
     [appIcon release];

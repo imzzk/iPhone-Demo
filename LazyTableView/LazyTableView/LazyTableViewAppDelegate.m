@@ -7,64 +7,148 @@
 //
 
 #import "LazyTableViewAppDelegate.h"
+#import "RootViewController.h"
+#import "ParseOperation.h"
+
+#import <CFNetwork/CFNetwork.h>
+
+static NSString *const TopPaidAppsFeed =
+    @"http://phobos.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/toppaidapplications/limit=75/xml";
 
 @implementation LazyTableViewAppDelegate
 
-@synthesize window = _window;
-@synthesize navigationController = _navigationController;
+@synthesize window;
+@synthesize navigationController;
+@synthesize rootViewController;
+@synthesize appRecords;
+@synthesize queue;
+@synthesize appListFeedConnection;
+@synthesize appListData;
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+#pragma mark -
+
+- (void)applicationDidFinishLaunching:(UIApplication *)application
 {
     // Override point for customization after application launch.
     // Add the navigation controller's view to the window and display.
-    self.window.rootViewController = self.navigationController;
-    [self.window makeKeyAndVisible];
-    return YES;
+    //self.window.rootViewController = self.navigationController;
+    
+    [window addSubview:[self.navigationController view]];
+
+    [window makeKeyAndVisible];
+    
+    self.appRecords = [NSMutableArray array];
+    
+    rootViewController.entries = self.appRecords;
+    
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:TopPaidAppsFeed]];
+    self.appListFeedConnection = [[[NSURLConnection alloc] initWithRequest:urlRequest delegate:self] autorelease];
+    
+    
+    NSAssert(self.appListFeedConnection != nil, @"Failure to create URL connection.");
+    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
 }
 
-- (void)applicationWillResignActive:(UIApplication *)application
+
+-(void)handleLoadedApps:(NSArray *)loadedApps
 {
-    /*
-     Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-     Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-     */
+    [self.appRecords addObjectsFromArray:loadedApps];
+    
+    [rootViewController.tableView reloadData];
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application
+-(void)didFinishParsing:(NSArray *)appList
 {
-    /*
-     Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-     If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-     */
+    [self performSelectorOnMainThread:@selector(handleLoadedApps:) withObject:appList waitUntilDone:NO];
+    
+    self.queue = nil;
 }
 
-- (void)applicationWillEnterForeground:(UIApplication *)application
+-(void)parseErrorOccurred:(NSError *)error
 {
-    /*
-     Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-     */
+    [self performSelectorOnMainThread:@selector(handleError:) withObject:error waitUntilDone:NO];
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application
+
+#pragma mark -
+#pragma mark NSURLConnection delegate methods   
+
+
+-(void)handleError:(NSError *)error
 {
-    /*
-     Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-     */
+    NSString *errorMessage = [error localizedDescription];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Cannot Show Top Paid Apps" 
+                                                    message:errorMessage 
+                                                   delegate:nil 
+                                          cancelButtonTitle:@"OK" 
+                                          otherButtonTitles:nil, nil];
+    [alert show];
+    [alert release];
 }
 
-- (void)applicationWillTerminate:(UIApplication *)application
+-(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
-    /*
-     Called when the application is about to terminate.
-     Save data if appropriate.
-     See also applicationDidEnterBackground:.
-     */
+    self.appListData = [NSMutableData data];
 }
+
+-(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    [appListData appendData:data];
+}
+
+-(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    
+    if ([error code] == kCFURLErrorNotConnectedToInternet) 
+    {
+        NSDictionary *userInfo =[NSDictionary dictionaryWithObject:@"NO Connection Error" 
+                                                            forKey:NSLocalizedDescriptionKey];
+        NSError *noConnectionError = [NSError errorWithDomain:NSCocoaErrorDomain 
+                                                         code:kCFURLErrorNotConnectedToInternet 
+                                                     userInfo:userInfo];
+        
+        [self handleError:noConnectionError];
+    }
+    else
+    {
+        [self handleError:error];
+    }
+    self.appListFeedConnection = nil;
+    
+}
+
+-(void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    self.appListFeedConnection = nil;
+    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    
+    self.queue = [[NSOperationQueue alloc] init];
+    
+    ParseOperation *parser = [[ParseOperation alloc] initWithData:appListData delegate:self];
+    
+    [queue addOperation:parser];
+    
+    [parser release];
+    
+    self.appListData = nil;
+}
+
+
+
 
 - (void)dealloc
 {
-    [_window release];
-    [_navigationController release];
+    [navigationController release];
+    [appRecords release];
+    [rootViewController release];
+    [appListData release];
+    [appListFeedConnection release];
+    [window release];
+
     [super dealloc];
 }
 

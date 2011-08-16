@@ -7,7 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "IconDownloader.h"
 
-@interface RootViewController : UITableViewController
+@interface RootViewController : UITableViewController<UIScrollViewDelegate, IconDownloaderDelegate>
+{
+    NSArray *entries;
+    NSMutableDictionary *imageDownLoadsInProgress;
+
+}
+
+@property(nonatomic, retain) NSArray *entries;
+@property(nonatomic, retain) NSMutableDictionary *imageDownLoadsInProgress;
+
+-(void)appImageDidLoad:(NSIndexPath *)indexPath;
 
 @end

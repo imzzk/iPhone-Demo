@@ -6,12 +6,10 @@
 //  Copyright 2011年 博客园. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 @interface AppRecord : NSObject
 {
     NSString *appName;
-    UIImage     *appIcon;
+    UIImage  *appIcon;
     NSString *artist;
     NSString *imageURLString;
     NSString *appURLString;
